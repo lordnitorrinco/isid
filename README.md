@@ -91,5 +91,3 @@ Este proyecto incluye un archivo llamado `isid.postman_collection.json`, que con
   - **Token de usuario**: Para rutas protegidas por el middleware `UserMiddleware`.
   - **Token de instructor**: Para rutas protegidas por el middleware `InstructorMiddleware`.
 - Puedes obtener el token al iniciar sesión con los endpoints de login correspondientes.
-
-¡Feliz testing!
