@@ -94,4 +94,5 @@ class CourseController extends Controller
 
         return Course::where('instructor_id', $instructor->id)->get();
     }
+
 }

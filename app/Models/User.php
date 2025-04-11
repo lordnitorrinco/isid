@@ -46,4 +46,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the favorite courses of the user.
+     */
+    public function favoriteCourses()
+    {
+        return $this->hasMany(FavoriteCourse::class);
+    }
 }

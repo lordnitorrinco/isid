@@ -1,937 +1,257 @@
 {
 	"info": {
-		"_postman_id": "c14bdcb0-8773-430d-aa57-cd7c4efa1240",
+		"_postman_id": "630b6f28-2caa-44e0-a56f-d0a617a46c22",
 		"name": "isid",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "39901668"
 	},
 	"item": [
 		{
-			"name": "Auth",
-			"item": [
-				{
-					"name": "user create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"password123\",\r\n    \"password_confirmation\": \"password123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"register"
-							]
-						}
-					},
-					"response": []
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\"\n}"
 				},
-				{
-					"name": "user login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"password123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "instructor create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Jane Smith\",\r\n    \"email\": \"jane.smith@example.com\",\r\n    \"password\": \"securepassword\",\r\n    \"password_confirmation\": \"securepassword\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/instructor/register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"instructor",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "instructor login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jane.smith@example.com\",\r\n    \"password\": \"securepassword\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/instructor/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"instructor",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "instructor profile",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "user profile",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
+				"url": {
+					"raw": "http://localhost:80/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"register"
+					]
 				}
-			]
+			},
+			"response": []
 		},
 		{
-			"name": "Courses",
-			"item": [
-				{
-					"name": "show all courses",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:80/api/courses",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses"
-							]
-						}
-					},
-					"response": []
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password\"\n}"
 				},
-				{
-					"name": "show all courses current instructor",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:80/api/courses",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:80/api/courses",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "1|ccOStXmhBEY4MY4hQADShsDYI9unEFjcn5ejutNY89a83898",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Course 1 updated\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course delete",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
+				"url": {
+					"raw": "http://localhost:80/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"login"
+					]
 				}
-			]
+			},
+			"response": []
 		},
 		{
-			"name": "Lessons",
-			"item": [
-				{
-					"name": "lesson create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "5|dN5RAuvaofJU8CJ9q0Rm0kXthHpWQD1pdLnOyTnY3633efd4",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Course 1\",\r\n    \"video_url\": \"https://ourse1description.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/lessons",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"lessons"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "lesson update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "5|dN5RAuvaofJU8CJ9q0Rm0kXthHpWQD1pdLnOyTnY3633efd4",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Course 1\",\r\n    \"video_url\": \"https://ourse1description.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/lessons/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"lessons",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "lessons per course",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/lessons",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"lessons"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "lessons show",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/lessons",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"lessons"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "lessons delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "5|dN5RAuvaofJU8CJ9q0Rm0kXthHpWQD1pdLnOyTnY3633efd4",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:80/api/lessons/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"lessons",
-								"2"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Ratings",
-			"item": [
-				{
-					"name": "rating create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"rating\": 4\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/ratings",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"ratings"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "rating update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"rating\": 5\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/ratings/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"ratings",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "rating delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/ratings/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"ratings",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ratings average",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"rating\": 4\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/ratings/average",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"ratings",
-								"average"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ratings per course",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"rating\": 4\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/ratings",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"ratings"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Comments",
-			"item": [
-				{
-					"name": "comment create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "5|dN5RAuvaofJU8CJ9q0Rm0kXthHpWQD1pdLnOyTnY3633efd4",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Course 1\",\r\n    \"video_url\": \"https://ourse1description.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/lessons",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"lessons"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "comment update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Comment 1 update\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/comments/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"comments",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "comment per course",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Comment 1 update\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/comments",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"comments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "comment delete",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "6|27spdWUBwvxG7FDUWohTVkA2dVE6eCUU6PGchNnK5c7fc7c0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Comment 1 update\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:80/api/courses/2/comments",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "80",
-							"path": [
-								"api",
-								"courses",
-								"2",
-								"comments"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "instructors list",
+			"name": "Get Courses",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New Course\",\n  \"description\": \"Course description\",\n  \"lessons\": [\n    {\n      \"title\": \"Lesson 1\",\n      \"video_url\": \"http://example.com/video1.mp4\"\n    },\n    {\n      \"title\": \"Lesson 2\",\n      \"video_url\": \"http://example.com/video2.mp4\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:80/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Course to Favorites",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/courses/{course}/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"courses",
+						"{course}",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Course from Favorites",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_TOKEN"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:80/api/courses/{course}/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"courses",
+						"{course}",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/check-database",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"check-database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Course",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Course\",\n  \"description\": \"Updated course description\",\n  \"lessons\": [\n    {\n      \"title\": \"Updated Lesson 1\",\n      \"video_url\": \"http://example.com/updated_video1.mp4\"\n    },\n    {\n      \"title\": \"Updated Lesson 2\",\n      \"video_url\": \"http://example.com/updated_video2.mp4\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:80/api/courses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"courses",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}

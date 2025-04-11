@@ -9,6 +9,8 @@ use App\Models\Course;
 use App\Policies\CoursePolicy;
 use App\Models\Lesson;
 use App\Policies\LessonPolicy;
+use App\Models\FavoriteCourse;
+use App\Policies\FavoriteCoursePolicy;
 
 class AppServiceProvider extends ServiceProvider
 {

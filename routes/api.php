@@ -14,6 +14,7 @@ use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\UserMiddleware;
 use App\Http\Middleware\InstructorMiddleware;
+use App\Http\Controllers\FavoriteCourseController;
 
 /* Route::get('/user', function (Request $request) {
     return $request->user();
@@ -99,3 +100,12 @@ Route::delete('/ratings/{rating}', [RatingController::class, 'destroy'])->middle
 
 // List all instructors
 Route::get('/instructors', [InstructorController::class, 'index']);
+
+// Listar todos los cursos favoritos de un usuario
+Route::get('/favorites', [FavoriteCourseController::class, 'index'])->middleware(UserMiddleware::class);
+
+// Agregar un curso a favoritos
+Route::post('/favorites/{course}', [FavoriteCourseController::class, 'store'])->middleware(UserMiddleware::class);
+
+// Eliminar un curso de favoritos
+Route::delete('/favorites/{favoriteCourse}', [FavoriteCourseController::class, 'destroy'])->middleware(UserMiddleware::class);

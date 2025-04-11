@@ -81,6 +81,11 @@ Este proyecto incluye un archivo llamado `isid.postman_collection.json`, que con
 ### Instructors
 - **`GET /api/instructors`**: Listar todos los instructores.
 
+### Favorites
+- **`GET /api/favorites`**: Listar todos los cursos favoritos de un usuario (requiere token de usuario).
+- **`POST /api/favorites`**: Agregar un curso a favoritos (requiere token de usuario).
+- **`DELETE /api/favorites/{favoriteCourse}`**: Eliminar un curso de favoritos (requiere token de usuario).
+
 ## Notas importantes
 - Los endpoints que requieren autenticación necesitan un token válido. Asegúrate de usar el token correcto según el tipo de usuario:
   - **Token de usuario**: Para rutas protegidas por el middleware `UserMiddleware`.

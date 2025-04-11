@@ -63,4 +63,12 @@ class CoursePolicy
     {
         return false;
     }
+
+    /**
+     * Determine whether the user can manage their favorite courses.
+     */
+    public function manageFavorites(User $user): bool
+    {
+        return true;
+    }
 }
