@@ -37,6 +37,7 @@ Este proyecto incluye un archivo llamado `isid.postman_collection.json`, que con
 2. Haz clic en "Import".
 3. Selecciona el archivo `isid.postman_collection.json`.
 4. Una vez importado, verás una lista de los endpoints organizados por categorías.
+5. Para los endpoints que requieren de un token, cópialo del endpoint de login (usuario o instructor), ve a la pestaña Authorization en la consulta, selecciona "Bearer token" y pega el token en el input de la derecha.
 
 
 ## Endpoints disponibles
