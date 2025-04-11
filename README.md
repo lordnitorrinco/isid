@@ -1,5 +1,33 @@
 Entiendo que esto "Recuperar desde el controlador de cursos todos los instructores dados de alta en la plataforma y devolverlos en la respuesta, teniendo en cuenta que puede haber millones de registros, debería ser lo más óptimo posible." iba enfocado a un eager load, pero como es sacar todos los instructores sin relaciones no le veía el sentido, así que he metido el eager load en el promedio de ratings y esto lo he optimizado habilitando el login en dos tablas distintas, users e instructors, así se pueden sacar todos los instructores de una sin tener que filtrar nada.
 
+## Configuración del proyecto
+Para configurar el proyecto localmente, sigue estos pasos:
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/lordnitorrinco/isid
+   ```
+
+2. Accede al directorio del proyecto:
+   ```bash
+   cd isid
+   ```
+
+3. Instala las dependencias de Composer:
+   ```bash
+   composer install
+   ```
+
+4. Levanta los contenedores con Sail:
+   ```bash
+   ./vendor/bin/sail up -d
+   ```
+
+5. Ejecuta las migraciones de la base de datos:
+   ```bash
+   ./vendor/bin/sail artisan migrate
+   ```
+
 # Postman Collection for API Testing
 
 Este proyecto incluye un archivo llamado `isid.postman_collection.json`, que contiene una colección de Postman para testear los endpoints de la API. Puedes importar esta colección en Postman para facilitar las pruebas de los diferentes endpoints disponibles.
@@ -9,6 +37,7 @@ Este proyecto incluye un archivo llamado `isid.postman_collection.json`, que con
 2. Haz clic en "Import".
 3. Selecciona el archivo `isid.postman_collection.json`.
 4. Una vez importado, verás una lista de los endpoints organizados por categorías.
+
 
 ## Endpoints disponibles
 
